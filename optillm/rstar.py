@@ -20,6 +20,13 @@ class Node:
         self.visits = 0
         self.value = 0.0
 
+def print_tree(node: Node, depth: int = 0):
+    indent = "  " * depth
+    print(f"{indent}Action: {node.action} | Visits: {node.visits} | Value: {node.value}")
+    # print(f"{indent}State: {node.state}\n")
+    for child in node.children:
+        print_tree(child, depth + 1)
+
 class RStar:
     def __init__(self, system: str, client, model: str, max_depth: int = 3, num_rollouts: int = 5, c: float = 1.4):
         self.client = client
@@ -65,13 +72,18 @@ class RStar:
         for _ in range(self.num_rollouts):
             tasks.append(self.mcts_rollout_async(root))
         await asyncio.gather(*tasks)
+
+        print('\n\n\n\n\n')
+        print_tree(root) # Recursively print the whole tree
+        print('\n\n\n\n\n')
+
         return self.extract_trajectories(root)
 
     async def mcts_rollout_async(self, root: Node):
         node = root
         while node.children:
             node, _ = self.select_action(node)
-        action = random.choice(self.actions)
+        action = random.choice(self.actions) # PROBLEM here for action constraints
         if len(node.children) < len(self.actions):
             node = await self.expand_async(node, action)
         value = await self.simulate_async(node)
@@ -81,11 +93,19 @@ class RStar:
         self.original_question = question
         logger.info(f"Solving question: {question}")
         trajectories = await self.mcts_async(question)
+
         if not trajectories:
             logger.warning("No trajectories found. Unable to solve the question.")
             return "Unable to solve the question due to insufficient reasoning paths."
         final_trajectory = self.select_final_trajectory(trajectories)
-        logger.debug(f"Final trajectory: {[node.state for node in final_trajectory]}")
+        # logger.debug(f"Final trajectory: {[node.state for node in final_trajectory]}")
+
+        logger.info(f"Total trajectories extracted: {len(trajectories)}")  # Log number of trajectories
+
+        # Print each node in the final trajectory to the console
+        for i, node in enumerate(final_trajectory):
+            print(f"\n\nTrajectory node {i}: | Action: {node.action}\n{node.state}")
+
         answers = [self.extract_answer(node.state) for node in final_trajectory]
         final_answer = self.select_best_answer(answers)
         logger.info(f"Selected final answer: {final_answer}")
@@ -107,7 +127,7 @@ class RStar:
         logger.debug(f"Generated response: {generated_response}")
         return generated_response
     
-    def select_action(self, node: Node) -> Tuple[Node, str]:
+    def select_action(self, node: Node) -> Tuple[Node, str]: # PROBLEM here for action constraints
         if not node.children:
             action = random.choice(self.actions)
             logger.debug(f"Selected random action: {action}")
@@ -164,7 +184,7 @@ class RStar:
             node = root
             while node.children:
                 node, _ = self.select_action(node)
-            action = random.choice(self.actions)
+            action = random.choice(self.actions) # PROBLEM here for action constraints
             if len(node.children) < len(self.actions):
                 node = self.expand(node, action)
             value = self.simulate(node)
@@ -192,7 +212,8 @@ class RStar:
         prompt = self.create_discriminator_prompt(partial_trajectory)
         completion = self.generate_response(prompt)
         is_consistent = self.compare_completions(completion, trajectory[split_index:])
-        logger.debug(f"Mutual consistency check: {'Passed' if is_consistent else 'Failed'}")
+        # logger.debug(f"Mutual consistency check: {'Passed' if is_consistent else 'Failed'}")
+        print(f"\n\nMutual consistency check: {'Passed' if is_consistent else 'Failed'}\n\n")
         return is_consistent
 
     def select_final_trajectory(self, trajectories: List[List[Node]]) -> List[Node]:
@@ -332,3 +353,19 @@ This rephrasing should help clarify the problem and guide the solution process."
         Synchronous wrapper for solve_async method.
         """
         return asyncio.run(self.solve_async(question))
+    
+
+    def allowed_actions_for_node(self, node: Node) -> List[str]:
+        allowed = self.actions.copy()
+        # If node is the root, A5 is allowed, but A4 is not
+        if node.parent is None:
+            if "A4" in allowed:
+                allowed.remove("A4")
+        else:
+            # For non-root nodes, remove A5
+            if "A5" in allowed:
+                allowed.remove("A5")
+            # And if the parent's action is not A3, remove A4
+            if node.parent.action != "A3" and "A4" in allowed:
+                allowed.remove("A4")
+        return allowed
