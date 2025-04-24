@@ -1,0 +1,33 @@
+strict digraph {
+node_0 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>Root<BR/>Visits: 3<BR/>Value: 3.00<BR/><BR/>For how many two-<BR/>digit primes is the<BR/>sum of the digits<BR/>equal to 8?</TD></TR></TABLE>>, color="#E8E8E8", shape=ellipse, style=filled, depth=0, fontsize=8];
+node_1 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A1<BR/>Not Explored</TD></TR></TABLE>>, color="#AED6F1", alpha=0.3, shape=ellipse, style=dashed, depth=1, fontsize=8];
+node_2 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A2<BR/>Not Explored</TD></TR></TABLE>>, color="#A3E4D7", alpha=0.3, shape=ellipse, style=dashed, depth=1, fontsize=8];
+node_3 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A3<BR/>Not Explored</TD></TR></TABLE>>, color="#F9E79F", alpha=0.3, shape=ellipse, style=dashed, depth=1, fontsize=8];
+node_4 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A4<BR/>Visits: 3<BR/>Value: 3.00<BR/><BR/>To find how many<BR/>two-digit prime<BR/>numbers have digits<BR/>that sum to 8, we<BR/>can follow these<BR/>steps:  1.<BR/>**Identify the range<BR/>of two-digit<BR/>numbers**: Two-digit<BR/>numbers range from<BR/>10 to 99.  2. **Set<BR/>up the condition for<BR/>the sum of digits**:<BR/>We need the sum of<BR/>the digits of a two-<BR/>digit number to be<BR/>8. If the two-digit<BR/>number is<BR/>represented as \(10a<BR/>+ b\), where \(a\)<BR/>is the tens digit<BR/>and \(b\) is the<BR/>units digit, then we<BR/>have the equation:<BR/>\[    a + b = 8<BR/>\]    Since \(a\) is<BR/>a tens digit, it<BR/>ranges from 1 to 9.<BR/>3. **List possible<BR/>combinations of<BR/>\(a\) and \(b\)**:<BR/>- \(a = 1\), \(b =<BR/>7\) \(\rightarrow\)<BR/>Number: 17    - \(a<BR/>= 2\), \(b = 6\)<BR/>\(\rightarrow\)<BR/>Number: 26    - \(a<BR/>= 3\), \(b =...</TD></TR></TABLE>>, color="#F5B7B1", shape=ellipse, style=filled, depth=1, fontsize=8];
+node_5 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A1<BR/>Not Explored</TD></TR></TABLE>>, color="#AED6F1", alpha=0.3, shape=ellipse, style=dashed, depth=2, fontsize=8];
+node_6 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A2<BR/>Not Explored</TD></TR></TABLE>>, color="#A3E4D7", alpha=0.3, shape=ellipse, style=dashed, depth=2, fontsize=8];
+node_7 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A3<BR/>Not Explored</TD></TR></TABLE>>, color="#F9E79F", alpha=0.3, shape=ellipse, style=dashed, depth=2, fontsize=8];
+node_8 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A4<BR/>Not Explored</TD></TR></TABLE>>, color="#F5B7B1", alpha=0.3, shape=ellipse, style=dashed, depth=2, fontsize=8];
+node_9 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A5<BR/>Visits: 2<BR/>Value: 2.00<BR/><BR/>To determine how<BR/>many two-digit prime<BR/>numbers have digits<BR/>that sum to 8,<BR/>follow these steps:<BR/>1. **Define the<BR/>range of two-digit<BR/>numbers**: Two-digit<BR/>numbers range from<BR/>10 to 99.  2.<BR/>**Establish the<BR/>condition for the<BR/>sum of digits**: We<BR/>need the sum of the<BR/>digits of a two-<BR/>digit number to be<BR/>8. If the two-digit<BR/>number is<BR/>represented as \(10a<BR/>+ b\), where \(a\)<BR/>is the tens digit<BR/>and \(b\) is the<BR/>units digit, then<BR/>the equation is:<BR/>\[    a + b = 8<BR/>\]    Here, \(a\)<BR/>ranges from 1 to 9,<BR/>as it is the tens<BR/>digit.  3. **List<BR/>possible<BR/>combinations of<BR/>\(a\) and \(b\)**:<BR/>- \(a = 1\), \(b =<BR/>7\) \(\rightarrow\)<BR/>Number: 17    - \(a<BR/>= 2\), \(b = 6\)<BR/>\(\rightarrow\)<BR/>Number: 26    - \(a<BR/>= 3\), \(b = ...</TD></TR></TABLE>>, color="#D7BDE2", shape=ellipse, style=filled, depth=2, fontsize=8];
+node_10 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A1<BR/>Not Explored</TD></TR></TABLE>>, color="#AED6F1", alpha=0.3, shape=ellipse, style=dashed, depth=3, fontsize=8];
+node_11 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A2<BR/>Visits: 2<BR/>Value: 2.00<BR/><BR/>The problem has<BR/>already been solved<BR/>with the steps<BR/>provided. Let's<BR/>summarize the<BR/>solution:  1.<BR/>**Define the range<BR/>of two-digit<BR/>numbers**: Two-digit<BR/>numbers range from<BR/>10 to 99.  2.<BR/>**Establish the<BR/>condition for the<BR/>sum of digits**: We<BR/>need the sum of the<BR/>digits of a two-<BR/>digit number to be<BR/>8. If the two-digit<BR/>number is<BR/>represented as \(10a<BR/>+ b\), where \(a\)<BR/>is the tens digit<BR/>and \(b\) is the<BR/>units digit, then<BR/>the equation is:<BR/>\[    a + b = 8<BR/>\]    Here, \(a\)<BR/>ranges from 1 to 9,<BR/>as it is the tens<BR/>digit.  3. **List<BR/>possible<BR/>combinations of<BR/>\(a\) and \(b\)**:<BR/>- \(a = 1\), \(b =<BR/>7\) \(\rightarrow\)<BR/>Number: 17    - \(a<BR/>= 2\), \(b = 6\)<BR/>\(\rightarrow\)<BR/>Number: 26    - \(a<BR/>= 3\), \(b = 5\...</TD></TR></TABLE>>, color="#A3E4D7", shape=ellipse, style=filled, depth=3, fontsize=8];
+node_12 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A3<BR/>Not Explored</TD></TR></TABLE>>, color="#F9E79F", alpha=0.3, shape=ellipse, style=dashed, depth=3, fontsize=8];
+node_13 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A4<BR/>Not Explored</TD></TR></TABLE>>, color="#F5B7B1", alpha=0.3, shape=ellipse, style=dashed, depth=3, fontsize=8];
+node_14 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A5<BR/>Not Explored</TD></TR></TABLE>>, color="#D7BDE2", alpha=0.3, shape=ellipse, style=dashed, depth=3, fontsize=8];
+node_15 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>A5<BR/>Not Explored</TD></TR></TABLE>>, color="#D7BDE2", alpha=0.3, shape=ellipse, style=dashed, depth=1, fontsize=8];
+node_0 -> node_1 [style=dashed, weight=0.7, alpha=0.3];
+node_0 -> node_2 [style=dashed, weight=0.7, alpha=0.3];
+node_0 -> node_3 [style=dashed, weight=0.7, alpha=0.3];
+node_0 -> node_4 [style=solid, weight=2.0, alpha=1.0];
+node_0 -> node_15 [style=dashed, weight=0.7, alpha=0.3];
+node_4 -> node_5 [style=dashed, weight=0.7, alpha=0.3];
+node_4 -> node_6 [style=dashed, weight=0.7, alpha=0.3];
+node_4 -> node_7 [style=dashed, weight=0.7, alpha=0.3];
+node_4 -> node_8 [style=dashed, weight=0.7, alpha=0.3];
+node_4 -> node_9 [style=solid, weight=2.0, alpha=1.0];
+node_9 -> node_10 [style=dashed, weight=0.7, alpha=0.3];
+node_9 -> node_11 [style=solid, weight=2.0, alpha=1.0];
+node_9 -> node_12 [style=dashed, weight=0.7, alpha=0.3];
+node_9 -> node_13 [style=dashed, weight=0.7, alpha=0.3];
+node_9 -> node_14 [style=dashed, weight=0.7, alpha=0.3];
+}
